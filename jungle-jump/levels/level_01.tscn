@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://bm7fw1sylhthu"]
+
+[ext_resource type="PackedScene" uid="uid://dwfudb5u3ijls" path="res://levels/level_base.tscn" id="1_ty3hu"]
+[ext_resource type="PackedScene" uid="uid://ddluk088isjio" path="res://enemies/enemy.tscn" id="2_mckh2"]
+[ext_resource type="PackedScene" uid="uid://u5e7cxu3ppej" path="res://levels/moving_platform.tscn" id="3_81a5f"]
+
+[node name="level01" unique_id=843267051 instance=ExtResource("1_ty3hu")]
+
+[node name="Sprite2D" parent="ParallaxBackground/Back" parent_id_path=PackedInt32Array(1990473117) index="0" unique_id=1905766777]
+position = Vector2(0, 0)
+
+[node name="Sprite2D" parent="ParallaxBackground/Middle" parent_id_path=PackedInt32Array(1236616446) index="0" unique_id=1413924719]
+position = Vector2(439.5, 263)
+scale = Vector2(0.99886364, 0.55434775)
+
+[node name="World" parent="." index="1" unique_id=991607134]
+position = Vector2(0, 1)
+layer_0/tile_data = PackedInt32Array(524308, 1245184, 1, 524310, 1441792, 4, 458756, 196608, 1, 524292, 196608, 1, 589828, 196608, 1, 655364, 196608, 1, 720900, 196608, 1, 786436, 196608, 1, 851972, 196608, 1, 917508, 196608, 1, 983044, 196608, 1, 458757, 196608, 1, 524293, 196608, 1, 589829, 196608, 1, 655365, 196608, 1, 720901, 196608, 1, 786437, 196608, 1, 851973, 196608, 1, 917509, 196608, 1, 983045, 196608, 1, 458758, 196608, 1, 524294, 196608, 1, 589830, 196608, 1, 655366, 196608, 1, 720902, 196608, 1, 786438, 196608, 1, 851974, 196608, 1, 917510, 196608, 1, 983046, 196608, 1, 983047, 65536, 1, 983048, 65536, 1, 983049, 65536, 1, 851978, 196608, 1, 917514, 65536, 1, 983050, 65536, 1, 851979, 196608, 1, 917515, 65536, 1, 983051, 65536, 1, 720908, 196608, 1, 786444, 196608, 1, 851980, 65536, 1, 917516, 65536, 1, 983052, 65536, 1, 720909, 196608, 1, 786445, 196608, 1, 851981, 65536, 1, 917517, 65536, 1, 983053, 65536, 1, 720910, 1245184, 1, 655376, 1245184, 1, 589842, 1245184, 1, 589847, 1441792, 4, 655384, 1441792, 4, 655398, 1114112, 14, 655399, 1114112, 14, 655400, 1114112, 14, 655401, 1114112, 14, 655402, 1114112, 14, 655403, 1114112, 14, 655404, 1114112, 14, 655405, 1114112, 14, 655406, 1114112, 14, 589861, 983040, 1342177294, 524325, 983040, 1342177294, 589871, 983040, 1610612750, 524335, 983040, 1610612750, 917513, 458752, 10, 851977, 458752, 10, 786443, 458752, 10, 720907, 458752, 10, 655424, 65536, 1, 655425, 65536, 1, 655426, 65536, 1, 655427, 65536, 1, 655428, 65536, 1, 655429, 65536, 1, 655430, 65536, 1, 655431, 65536, 1)
+
+[node name="Items" parent="." index="2" unique_id=317859624]
+layer_0/tile_data = PackedInt32Array(458783, 1, 0, 327715, 0, 0, 589893, 2, 3)
+
+[node name="Danger" parent="." index="3" unique_id=430063680 groups=["danger"]]
+
+[node name="SpawnPoint" parent="." index="4" unique_id=1429808101]
+position = Vector2(131, 199)
+
+[node name="Player" parent="." index="5" unique_id=546212902]
+position = Vector2(131, 211)
+
+[node name="Enemy" parent="." index="6" unique_id=54894809 instance=ExtResource("2_mckh2")]
+position = Vector2(648, 135)
+
+[node name="HUD" parent="CanvasLayer" parent_id_path=PackedInt32Array(1753657693) index="0" unique_id=1113594194]
+offset_top = 8.0
+offset_bottom = 105.0
+
+[node name="MovingPlatform" parent="." index="11" unique_id=623788909 instance=ExtResource("3_81a5f")]
+position = Vector2(816, 160)
+
+[node name="MovingPlatform2" parent="." index="12" unique_id=1886910334 instance=ExtResource("3_81a5f")]
+position = Vector2(416, 160)
+offset = Vector2(100, 0)

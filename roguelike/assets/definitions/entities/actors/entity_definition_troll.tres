@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EntityDefinition" format=3 uid="uid://c7n4b8mgjlsfv"]
+
+[ext_resource type="Script" uid="uid://b6ymof46ijjs2" path="res://src/Entities/entity_definition.gd" id="1_fib55"]
+[ext_resource type="Texture2D" uid="uid://d3hn3s37ekuuw" path="res://assets/images/kenney_1-bit-pack/monochrome_packed.png" id="2_yloo0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fib55"]
+atlas = ExtResource("2_yloo0")
+region = Rect2(400, 32, 16, 16)
+
+[resource]
+script = ExtResource("1_fib55")
+name = "Troll"
+texture = SubResource("AtlasTexture_fib55")
+color = Color(0.5647059, 0.93333334, 0.5647059, 1)
+metadata/_custom_type_script = "uid://b6ymof46ijjs2"

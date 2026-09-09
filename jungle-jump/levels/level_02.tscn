@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://conylu04erun3"]
+
+[ext_resource type="PackedScene" uid="uid://dwfudb5u3ijls" path="res://levels/level_base.tscn" id="1_nnn84"]
+
+[node name="level_02" unique_id=843267051 instance=ExtResource("1_nnn84")]
+
+[node name="Sprite2D" parent="ParallaxBackground/Back" parent_id_path=PackedInt32Array(1990473117) index="0" unique_id=1905766777]
+position = Vector2(-1, -1)
+
+[node name="Sprite2D" parent="ParallaxBackground/Middle" parent_id_path=PackedInt32Array(1236616446) index="0" unique_id=1413924719]
+position = Vector2(435, 367)
+
+[node name="World" parent="." index="1" unique_id=991607134]
+layer_0/tile_data = PackedInt32Array(917515, 458752, 5)
+
+[node name="SpawnPoint" parent="." index="4" unique_id=1429808101]
+position = Vector2(200, 205)
+
+[node name="Player" parent="." index="5" unique_id=546212902]
+position = Vector2(199, 207)

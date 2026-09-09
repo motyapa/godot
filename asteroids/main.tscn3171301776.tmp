@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dqfuxh4nf4kh7"]
+
+[ext_resource type="Texture2D" uid="uid://bcrefgv85e2jk" path="res://assets/space_background.png" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://b4ute6330hrqa" path="res://main.gd" id="1_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://nklf1vrn55rc" path="res://player.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://c1mah245n6bul" path="res://rock.tscn" id="2_lquwl"]
+
+[sub_resource type="Curve2D" id="Curve2D_7mycd"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1152, 0, 0, 0, 0, 0, 1152, 640, 0, 0, 0, 0, 0, 640, 0, 0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[node name="Main" type="Node" unique_id=1234496650]
+script = ExtResource("1_1bvp3")
+rock_scene = ExtResource("2_lquwl")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=911769321]
+position = Vector2(576, 320.00003)
+scale = Vector2(0.6, 0.5925926)
+texture = ExtResource("1_0xm2m")
+
+[node name="Player" parent="." unique_id=1001544824 instance=ExtResource("2_h2yge")]
+
+[node name="RockPath" type="Path2D" parent="." unique_id=1076678820]
+curve = SubResource("Curve2D_7mycd")
+
+[node name="RockSpawn" type="PathFollow2D" parent="RockPath" unique_id=2037308787]
