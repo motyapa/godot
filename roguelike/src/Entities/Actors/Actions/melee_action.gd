@@ -5,4 +5,13 @@ func perform() -> void:
 	var target: Entity = get_blocking_entity_at_destination()
 	if not target:
 		return
-	print("You kick the %s, much to it's annoyance!" % target.get_entity_name())
+	
+	var damage: int = entity.fighter_component.power - target.fighter_component.defense
+	
+	var attack_description: String = "%s attacks %s" % [entity.get_entity_name(), target.get_entity_name()]
+	if damage > 0:
+		attack_description += " for %d hit points." % damage
+		target.fighter_component.hp -= damage
+	else:
+		attack_description = " but does no damage."
+	print(attack_description)

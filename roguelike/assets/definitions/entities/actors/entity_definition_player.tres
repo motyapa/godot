@@ -1,7 +1,15 @@
 [gd_resource type="Resource" script_class="EntityDefinition" format=3 uid="uid://u268s475ltxi"]
 
 [ext_resource type="Script" uid="uid://b6ymof46ijjs2" path="res://src/Entities/entity_definition.gd" id="1_j7dal"]
+[ext_resource type="Script" uid="uid://b5vafha0pp6qy" path="res://src/Entities/Actors/Components/ComponentDefinitions/fighter_component_definition.gd" id="1_qkhq4"]
 [ext_resource type="Texture2D" uid="uid://d3hn3s37ekuuw" path="res://assets/images/kenney_1-bit-pack/monochrome_packed.png" id="2_js7ka"]
+
+[sub_resource type="Resource" id="Resource_54ag0"]
+script = ExtResource("1_qkhq4")
+max_hp = 30
+power = 5
+defense = 2
+metadata/_custom_type_script = "uid://b5vafha0pp6qy"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_js7ka"]
 atlas = ExtResource("2_js7ka")
@@ -11,4 +19,6 @@ region = Rect2(432, 0, 16, 16)
 script = ExtResource("1_j7dal")
 name = "Player"
 texture = SubResource("AtlasTexture_js7ka")
+fighter_definition = SubResource("Resource_54ag0")
+ai_type = 1
 metadata/_custom_type_script = "uid://b6ymof46ijjs2"

@@ -3,10 +3,8 @@
 [ext_resource type="Script" uid="uid://u04gk7vunk8c" path="res://src/Game/game.gd" id="1_60cvd"]
 [ext_resource type="Script" uid="uid://cg1w5o12mv28y" path="res://src/Map/map.gd" id="2_bob6j"]
 [ext_resource type="Script" uid="uid://bwt030mhdah88" path="res://src/Map/dungeon_generator.gd" id="3_3s8ir"]
+[ext_resource type="Script" uid="uid://byal7vlubxffd" path="res://src/Game/input_handler.gd" id="3_sag4g"]
 [ext_resource type="Script" uid="uid://cwdx8mhsdfqch" path="res://src/Map/field_of_view.gd" id="4_7m6cs"]
-[ext_resource type="Script" uid="uid://byal7vlubxffd" path="res://src/Game/EventHandlers/main_game_input_handler.gd" id="5_7m6cs"]
-[ext_resource type="Script" uid="uid://bbgxe0yvg0r32" path="res://src/Game/EventHandlers/input_handler.gd" id="5_le6wr"]
-[ext_resource type="Script" uid="uid://cie7wpg75o2p0" path="res://src/Game/EventHandlers/game_over_input_handler.gd" id="6_le6wr"]
 
 [node name="Game" type="Node2D" unique_id=1745081896]
 script = ExtResource("1_60cvd")
@@ -25,13 +23,7 @@ script = ExtResource("4_7m6cs")
 [node name="Entities" type="Node2D" parent="Map" unique_id=1989790031]
 
 [node name="InputHandler" type="Node" parent="." unique_id=1531634750]
-script = ExtResource("5_le6wr")
-
-[node name="MainGameInputHandler" type="Node" parent="InputHandler" unique_id=1910448]
-script = ExtResource("5_7m6cs")
-
-[node name="GameOverInputHandler" type="Node" parent="InputHandler" unique_id=1385846883]
-script = ExtResource("6_le6wr")
+script = ExtResource("3_sag4g")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1630319270]
 zoom = Vector2(2, 2)
