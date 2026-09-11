@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://cg1w5o12mv28y" path="res://src/Map/map.gd" id="2_bob6j"]
 [ext_resource type="Script" uid="uid://bwt030mhdah88" path="res://src/Map/dungeon_generator.gd" id="3_3s8ir"]
 [ext_resource type="Script" uid="uid://cwdx8mhsdfqch" path="res://src/Map/field_of_view.gd" id="4_7m6cs"]
-[ext_resource type="Script" uid="uid://5ltucjb3adox" path="res://src/GUI/mouseover_checker.gd" id="5_4te78"]
 [ext_resource type="Script" uid="uid://byal7vlubxffd" path="res://src/Game/EventHandlers/main_game_input_handler.gd" id="5_7m6cs"]
 [ext_resource type="Script" uid="uid://bbgxe0yvg0r32" path="res://src/Game/EventHandlers/input_handler.gd" id="5_le6wr"]
 [ext_resource type="Script" uid="uid://cie7wpg75o2p0" path="res://src/Game/EventHandlers/game_over_input_handler.gd" id="6_le6wr"]
@@ -36,9 +35,6 @@ bg_color = Color(0, 0.49803922, 0, 1)
 font = ExtResource("10_drysr")
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_4te78"]
-font = ExtResource("10_drysr")
 
 [node name="InterfaceRoot" type="Control" unique_id=282996606]
 layout_mode = 3
@@ -83,11 +79,9 @@ script = ExtResource("4_7m6cs")
 
 [node name="Entities" type="Node2D" parent="VBoxContainer/SubViewportContainer/SubViewport/Game/Map" unique_id=1989790031]
 
-[node name="MouseoverChecker" type="Node2D" parent="VBoxContainer/SubViewportContainer/SubViewport/Game/Map" unique_id=733934526]
-script = ExtResource("5_4te78")
-
 [node name="InputHandler" type="Node" parent="VBoxContainer/SubViewportContainer/SubViewport/Game" unique_id=1531634750]
 script = ExtResource("5_le6wr")
+start_input_handler = null
 
 [node name="MainGameInputHandler" type="Node" parent="VBoxContainer/SubViewportContainer/SubViewport/Game/InputHandler" unique_id=1910448]
 script = ExtResource("5_7m6cs")
@@ -135,11 +129,6 @@ label_settings = SubResource("LabelSettings_lx5th")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MouseoverLabel" type="Label" parent="VBoxContainer/InfoBar/StatsPanel/VBoxContainer" unique_id=896488063]
-layout_mode = 2
-size_flags_vertical = 10
-label_settings = SubResource("LabelSettings_4te78")
-
 [node name="MessagesPanel" type="PanelContainer" parent="VBoxContainer/InfoBar" unique_id=1147471561]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -158,4 +147,3 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [connection signal="player_created" from="VBoxContainer/SubViewportContainer/SubViewport/Game" to="VBoxContainer/InfoBar/StatsPanel/VBoxContainer/HpDisplay" method="initialize"]
-[connection signal="entities_focussed" from="VBoxContainer/SubViewportContainer/SubViewport/Game/Map/MouseoverChecker" to="VBoxContainer/InfoBar/StatsPanel/VBoxContainer/MouseoverLabel" method="set_text"]
