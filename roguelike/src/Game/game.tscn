@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://byal7vlubxffd" path="res://src/Game/EventHandlers/main_game_input_handler.gd" id="5_7m6cs"]
 [ext_resource type="Script" uid="uid://bbgxe0yvg0r32" path="res://src/Game/EventHandlers/input_handler.gd" id="5_le6wr"]
 [ext_resource type="Script" uid="uid://cie7wpg75o2p0" path="res://src/Game/EventHandlers/game_over_input_handler.gd" id="6_le6wr"]
+[ext_resource type="PackedScene" uid="uid://b0vw8rjwl2r37" path="res://src/GUI/Reticle/reticle.tscn" id="6_muykf"]
 [ext_resource type="Texture2D" uid="uid://d3hn3s37ekuuw" path="res://assets/images/kenney_1-bit-pack/monochrome_packed.png" id="8_lx5th"]
 [ext_resource type="Script" uid="uid://k1uy66btth0k" path="res://src/Game/EventHandlers/history_viewer_input_handler.gd" id="8_ysswf"]
 [ext_resource type="Script" uid="uid://ou68qm44cs5f" path="res://src/GUI/hp_display.gd" id="9_mkl7w"]
@@ -89,11 +90,14 @@ script = ExtResource("4_7m6cs")
 [node name="MouseoverChecker" type="Node2D" parent="VBoxContainer/SubViewportContainer/SubViewport/Game/Map" unique_id=733934526]
 script = ExtResource("5_4te78")
 
+[node name="Reticle" parent="VBoxContainer/SubViewportContainer/SubViewport/Game/Map" unique_id=1439908784 instance=ExtResource("6_muykf")]
+
 [node name="InputHandler" type="Node" parent="VBoxContainer/SubViewportContainer/SubViewport/Game" unique_id=1531634750]
 script = ExtResource("5_le6wr")
 
-[node name="MainGameInputHandler" type="Node" parent="VBoxContainer/SubViewportContainer/SubViewport/Game/InputHandler" unique_id=1910448]
+[node name="MainGameInputHandler" type="Node" parent="VBoxContainer/SubViewportContainer/SubViewport/Game/InputHandler" unique_id=1910448 node_paths=PackedStringArray("reticle")]
 script = ExtResource("5_7m6cs")
+reticle = NodePath("../../Map/Reticle")
 
 [node name="GameOverInputHandler" type="Node" parent="VBoxContainer/SubViewportContainer/SubViewport/Game/InputHandler" unique_id=1385846883]
 script = ExtResource("6_le6wr")

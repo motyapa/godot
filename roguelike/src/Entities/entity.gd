@@ -40,9 +40,7 @@ func set_entity_type(entity_definition: EntityDefinition) -> void:
 		add_child(fighter_component)
 		
 	if entity_definition.consumable_definition:
-		if entity_definition.consumable_definition is HealingConsumableComponentDefinition:
-			consumable_component = HealingConsumableComponent.new(entity_definition.consumable_definition)
-			add_child(consumable_component)
+		_handle_consumable(entity_definition.consumable_definition)
 			
 	if entity_definition.inventory_capacity > 0:
 		inventory_component = InventoryComponent.new(entity_definition.inventory_capacity)
@@ -54,10 +52,27 @@ func _init(map_data: MapData, start_position: Vector2i, entity_definition: Entit
 	self.map_data = map_data
 	set_entity_type(entity_definition)
 	
+func _handle_consumable(consumable_definition: ConsumableComponentDefinition) -> void:
+	if consumable_definition is HealingConsumableComponentDefinition:
+		consumable_component = HealingConsumableComponent.new(consumable_definition)
+	elif consumable_definition is LightningDamageConsumableComponentDefinition:
+		consumable_component = LightningDamageConsumableComponent.new(consumable_definition)
+	elif consumable_definition is ConfusionConsumableComponentDefinition:
+		consumable_component = ConfusionConsumableComponent.new(consumable_definition)
+	elif consumable_definition is FireballDamageConsumableComponentDefinition:
+		consumable_component = FireballDamageConsumableComponent.new(consumable_definition)
+		
+	if consumable_component:
+		add_child(consumable_component)
+	
 func move(move_offset: Vector2i) -> void:
 	map_data.unregister_blocking_entity(self)
 	grid_position += move_offset
 	map_data.register_blocking_entity(self)
+	
+func distance(other_position: Vector2i) -> int:
+	var relative: Vector2i = other_position - grid_position
+	return maxi(abs(relative.x), abs(relative.y))
 
 func is_blocking_movement() -> bool:
 	return blocks_movement
