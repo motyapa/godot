@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="EntityDefinition" format=3 uid="uid://u268s475ltxi"]
 
+[ext_resource type="Texture2D" uid="uid://c4w36g3flxieq" path="res://assets/resources/default_death_texture.tres" id="1_eqybp"]
 [ext_resource type="Script" uid="uid://b6ymof46ijjs2" path="res://src/Entities/entity_definition.gd" id="1_j7dal"]
 [ext_resource type="Script" uid="uid://b5vafha0pp6qy" path="res://src/Entities/Actors/Components/ComponentDefinitions/fighter_component_definition.gd" id="1_qkhq4"]
 [ext_resource type="Texture2D" uid="uid://d3hn3s37ekuuw" path="res://assets/images/kenney_1-bit-pack/monochrome_packed.png" id="2_js7ka"]
@@ -21,4 +22,5 @@ name = "Player"
 texture = SubResource("AtlasTexture_js7ka")
 fighter_definition = SubResource("Resource_54ag0")
 ai_type = 1
+inventory_capacity = 26
 metadata/_custom_type_script = "uid://b6ymof46ijjs2"

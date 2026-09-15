@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b6ymof46ijjs2" path="res://src/Entities/entity_definition.gd" id="1_34ng1"]
 [ext_resource type="Script" uid="uid://b5vafha0pp6qy" path="res://src/Entities/Actors/Components/ComponentDefinitions/fighter_component_definition.gd" id="1_chaqc"]
+[ext_resource type="Texture2D" uid="uid://c4w36g3flxieq" path="res://assets/resources/default_death_texture.tres" id="1_x1j3b"]
 [ext_resource type="Texture2D" uid="uid://d3hn3s37ekuuw" path="res://assets/images/kenney_1-bit-pack/monochrome_packed.png" id="2_jo12c"]
 
 [sub_resource type="Resource" id="Resource_x1j3b"]

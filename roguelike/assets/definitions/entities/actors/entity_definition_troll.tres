@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="EntityDefinition" format=3 uid="uid://c7n4b8mgjlsfv"]
 
 [ext_resource type="Script" uid="uid://b5vafha0pp6qy" path="res://src/Entities/Actors/Components/ComponentDefinitions/fighter_component_definition.gd" id="1_0yx76"]
+[ext_resource type="Texture2D" uid="uid://c4w36g3flxieq" path="res://assets/resources/default_death_texture.tres" id="1_54ag0"]
 [ext_resource type="Script" uid="uid://b6ymof46ijjs2" path="res://src/Entities/entity_definition.gd" id="1_fib55"]
 [ext_resource type="Texture2D" uid="uid://d3hn3s37ekuuw" path="res://assets/images/kenney_1-bit-pack/monochrome_packed.png" id="2_yloo0"]
 

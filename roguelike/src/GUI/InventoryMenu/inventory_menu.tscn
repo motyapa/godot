@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://cnckjep76otxb"]
+
+[ext_resource type="Texture2D" uid="uid://d3hn3s37ekuuw" path="res://assets/images/kenney_1-bit-pack/monochrome_packed.png" id="1_r407y"]
+[ext_resource type="Script" uid="uid://bmbmw0optuurv" path="res://src/GUI/InventoryMenu/inventory_menu.gd" id="1_sdycp"]
+[ext_resource type="FontFile" uid="uid://bpgnymkhpib4s" path="res://assets/Fonts/Kenney Pixel.ttf" id="2_nmnrv"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nmnrv"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+texture = ExtResource("1_r407y")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+region_rect = Rect2(768, 336, 16, 16)
+
+[sub_resource type="LabelSettings" id="LabelSettings_sdycp"]
+font = ExtResource("2_nmnrv")
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_56yp6"]
+color = Color(1, 1, 1, 1)
+
+[node name="InventoryMenu" type="CanvasLayer" unique_id=2048535725]
+script = ExtResource("1_sdycp")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1735788152]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer" unique_id=1133181032]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_nmnrv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer" unique_id=923297843]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=2049393017]
+unique_name_in_owner = true
+layout_mode = 2
+label_settings = SubResource("LabelSettings_sdycp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=1460003291]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_56yp6")
+
+[node name="InventoryList" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=1428574939]
+unique_name_in_owner = true
+layout_mode = 2

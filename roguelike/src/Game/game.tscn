@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://k1uy66btth0k" path="res://src/Game/EventHandlers/history_viewer_input_handler.gd" id="8_ysswf"]
 [ext_resource type="Script" uid="uid://ou68qm44cs5f" path="res://src/GUI/hp_display.gd" id="9_mkl7w"]
 [ext_resource type="FontFile" uid="uid://bpgnymkhpib4s" path="res://assets/Fonts/Kenney Pixel.ttf" id="10_drysr"]
+[ext_resource type="Script" uid="uid://b24bsvmdwv1c0" path="res://src/Game/EventHandlers/base_input_handler.gd" id="10_x8pff"]
 [ext_resource type="Script" uid="uid://bogr8ow3k6nxt" path="res://src/GUI/message_log.gd" id="11_drysr"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_le6wr"]
@@ -64,8 +65,10 @@ stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="VBoxContainer/SubViewportContainer" unique_id=958738938]
 disable_3d = true
+handle_input_locally = false
 canvas_item_default_texture_filter = 0
 size = Vector2i(1152, 536)
+render_target_update_mode = 4
 
 [node name="Game" type="Node2D" parent="VBoxContainer/SubViewportContainer/SubViewport" unique_id=1745081896]
 script = ExtResource("1_60cvd")
@@ -99,6 +102,9 @@ script = ExtResource("6_le6wr")
 script = ExtResource("8_ysswf")
 messages_panel_path = NodePath("../../../../../InfoBar/MessagesPanel")
 message_log_path = NodePath("../../../../../InfoBar/MessagesPanel/MessageLog")
+
+[node name="DummyInputHandler" type="Node" parent="VBoxContainer/SubViewportContainer/SubViewport/Game/InputHandler" unique_id=699681996]
+script = ExtResource("10_x8pff")
 
 [node name="Camera2D" type="Camera2D" parent="VBoxContainer/SubViewportContainer/SubViewport/Game" unique_id=1630319270]
 zoom = Vector2(2, 2)

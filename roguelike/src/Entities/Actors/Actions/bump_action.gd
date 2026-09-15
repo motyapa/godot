@@ -1,10 +1,8 @@
 class_name BumpAction
 extends ActionWithDirection
 
-func perform() -> void:
-	var destination := Vector2i(entity.grid_position + offset)
-	
+func perform() -> bool:
 	if get_target_actor():
-		MeleeAction.new(entity, offset.x, offset.y).perform()
+		return MeleeAction.new(entity, offset.x, offset.y).perform()
 	else:
-		MovementAction.new(entity, offset.x, offset.y).perform()
+		return MovementAction.new(entity, offset.x, offset.y).perform()
